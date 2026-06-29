@@ -1,3 +1,5 @@
+import MoveList from "./MoveList";
+
 function PokemonDetails({ pokemon, pokedexEntry }) {
   if (!pokemon) {
     return null;
@@ -27,6 +29,7 @@ function PokemonDetails({ pokemon, pokedexEntry }) {
       <p>Weight: {weightInPounds} lbs.</p>
       <p>Base Stat Total: {bst}</p>
       <p>Pokédex Entry: {pokedexEntry}</p>
+      <MoveList moves={pokemon.moves} />
     </div>
   );
 }
