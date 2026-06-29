@@ -1,9 +1,14 @@
 import MoveList from "./MoveList";
+import EvolutionLine from "./EvolutionLine";
 
-function PokemonDetails({ pokemon, pokedexEntry }) {
-  if (!pokemon) {
+function PokemonDetails({
+  pokemon,
+  pokedexEntry,
+  evolutionLine
+  }) {
+    if (!pokemon) {
     return null;
-  }
+    }
 
   const types = pokemon.types
     .map((typeObj) => typeObj.type.name)
@@ -30,6 +35,7 @@ function PokemonDetails({ pokemon, pokedexEntry }) {
       <p>Base Stat Total: {bst}</p>
       <p>Pokédex Entry: {pokedexEntry}</p>
       <MoveList moves={pokemon.moves} />
+      <EvolutionLine evolutionLine={evolutionLine} />
     </div>
   );
 }
