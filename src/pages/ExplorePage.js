@@ -5,6 +5,7 @@ import PokemonDetails from "../components/PokemonDetails";
 function ExplorePage() {
   const [pokemon, setPokemon] = useState(null);
   const [error, setError] = useState("");
+  const [pokedexEntry, setPokedexEntry] = useState("");
 
   function searchPokemon(searchText) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${searchText.toLowerCase()}`)
@@ -18,9 +19,19 @@ function ExplorePage() {
       .then((pokemonData) => {
         setPokemon(pokemonData);
         setError("");
+
+        fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonData.name}`)
+          .then((response) => response.json())
+          .then((speciesData) => {
+            const englishEntry = speciesData.flavor_text_entries.find(
+              (entry) => entry.language.name === "en"
+            );
+            setPokedexEntry(englishEntry.flavor_text);
+          });
       })
       .catch(() => {
         setPokemon(null);
+        setPokedexEntry("");
         setError("Pokémon not found. Try another name or number.");
       });
   }
@@ -30,7 +41,10 @@ function ExplorePage() {
       <h2>Explore Pokémon</h2>
       <SearchBar onSearch={searchPokemon} />
       {error ? <p>{error}</p> : null}
-      <PokemonDetails pokemon={pokemon} />
+      <PokemonDetails
+        pokemon={pokemon}
+        pokedexEntry={pokedexEntry}
+      />
     </div>
   );
 }
