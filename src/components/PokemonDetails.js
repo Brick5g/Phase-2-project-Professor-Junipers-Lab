@@ -1,4 +1,4 @@
-function PokemonDetails({ pokemon }) {
+function PokemonDetails({ pokemon, pokedexEntry }) {
   if (!pokemon) {
     return null;
   }
@@ -9,6 +9,10 @@ function PokemonDetails({ pokemon }) {
 
   const heightInFeet = (pokemon.height * 0.328084).toFixed(1);
   const weightInPounds = (pokemon.weight * 0.220462).toFixed(1);
+  const bst = pokemon.stats.reduce(
+    (total, stat) => total + stat.base_stat,
+    0
+  );
   
   return (
     <div>
@@ -21,6 +25,8 @@ function PokemonDetails({ pokemon }) {
       <p>Type: {types}</p>
       <p>Height: {heightInFeet} ft.</p>
       <p>Weight: {weightInPounds} lbs.</p>
+      <p>Base Stat Total: {bst}</p>
+      <p>Pokédex Entry: {pokedexEntry}</p>
     </div>
   );
 }
