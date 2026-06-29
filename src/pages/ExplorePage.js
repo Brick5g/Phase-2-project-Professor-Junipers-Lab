@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
-import RandomPokemonCard from "../components/RandomPokemonCard";
+import PokemonDetails from "../components/PokemonDetails";
 
 function ExplorePage() {
   const [pokemon, setPokemon] = useState(null);
@@ -30,7 +30,7 @@ function ExplorePage() {
       <h2>Explore Pokémon</h2>
       <SearchBar onSearch={searchPokemon} />
       {error ? <p>{error}</p> : null}
-      <RandomPokemonCard pokemon={pokemon} />
+      <PokemonDetails pokemon={pokemon} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ function HomePage() {
 
   function fetchRandomPokemon() {
     const randomNumber =
-      Math.floor(Math.random() * 649) + 1;
+      Math.floor(Math.random() * 1025) + 1;
 
     fetch(
       `https://pokeapi.co/api/v2/pokemon/${randomNumber}`
