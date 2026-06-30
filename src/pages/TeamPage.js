@@ -1,8 +1,33 @@
+import { useEffect, useState } from "react";
+
 function TeamPage() {
+  const [team, setTeam] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/team")
+      .then((response) => response.json())
+      .then((teamData) => {
+        setTeam(teamData);
+      });
+  }, []);
+
   return (
     <div>
       <h2>My Team</h2>
-      <p>Saved Pokemon will appear here!</p>
+
+      {team.map((pokemon) => {
+        return (
+          <div key={pokemon.id}>
+            <img src={pokemon.sprite} alt={pokemon.pokemonName} />
+
+            <h3>{pokemon.nickname}</h3>
+
+            <p>Species: {pokemon.pokemonName}</p>
+            <p>Pokédex #: {pokemon.pokemonId}</p>
+            <p>Reason: {pokemon.reason}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
