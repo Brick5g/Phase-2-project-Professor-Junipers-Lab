@@ -1,5 +1,6 @@
 import MoveList from "./MoveList";
 import EvolutionLine from "./EvolutionLine";
+import SavePokemonForm from "./SavePokemonForm";
 
 function PokemonDetails({
   pokemon,
@@ -36,6 +37,7 @@ function PokemonDetails({
       <p>Pokédex Entry: {pokedexEntry}</p>
       <MoveList moves={pokemon.moves} />
       <EvolutionLine evolutionLine={evolutionLine} />
+      <SavePokemonForm pokemon={pokemon} />
     </div>
   );
 }
