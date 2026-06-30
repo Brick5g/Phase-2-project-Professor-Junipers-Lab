@@ -7,6 +7,46 @@
       "nickname": "King",
       "reason": "His majesty speaks for himself",
       "id": "rCfsMBPtA7I"
+    },
+    {
+      "pokemonName": "blissey",
+      "pokemonId": 242,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/242.png",
+      "nickname": "Peggy",
+      "reason": "Look at the egg! What a good mother",
+      "id": "JoG8ogq5sCY"
+    },
+    {
+      "pokemonName": "clodsire",
+      "pokemonId": 980,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/980.png",
+      "nickname": "Derp",
+      "reason": "Face-card wins everytime",
+      "id": "qZlo2snZGC4"
+    },
+    {
+      "pokemonName": "scrafty",
+      "pokemonId": 560,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/560.png",
+      "nickname": "Baggy",
+      "reason": "like my clothes",
+      "id": "7ld96r20ZOc"
+    },
+    {
+      "pokemonName": "shedinja",
+      "pokemonId": 292,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/292.png",
+      "nickname": "Angel",
+      "reason": "RIP",
+      "id": "7WM1QpkUIUE"
+    },
+    {
+      "pokemonName": "iron-hands",
+      "pokemonId": 992,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/992.png",
+      "nickname": "Sumo-bot",
+      "reason": "Pretty self explanatory ",
+      "id": "bt4LBkSLg1c"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
