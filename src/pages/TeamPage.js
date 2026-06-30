@@ -21,17 +21,19 @@ function TeamPage() {
 }  
 
   return (
-    <div>
+    <div className="page-card">
       <h2>My Team</h2>
 
       {team.map((pokemon) => {
         return (
-          <div key={pokemon.id}>
+          <div className="team-card" key={pokemon.id}>
             <img src={pokemon.sprite} alt={pokemon.pokemonName} />
-
             <h3>{pokemon.nickname}</h3>
-
-            <p>Species: {pokemon.pokemonName}</p>
+            <p>
+              Species:{" "}
+              {pokemon.pokemonName.charAt(0).toUpperCase() +
+              pokemon.pokemonName.slice(1)}
+            </p>
             <p>Pokédex #: {pokemon.pokemonId}</p>
             <p>Reason: {pokemon.reason}</p>
             <button onClick={() => handleDelete(pokemon.id)}>

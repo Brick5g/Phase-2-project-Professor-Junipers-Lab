@@ -24,7 +24,7 @@ function HomePage() {
   }, []);
 
   return (
-    <div>
+    <div className="page-card">
       <h2>
         Welcome to Professor Juniper's Lab
       </h2>

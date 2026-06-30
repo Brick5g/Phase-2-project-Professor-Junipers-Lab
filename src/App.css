@@ -1,38 +1,345 @@
+body {
+  margin: 0;
+  background: #f4f7fb;
+  font-family: Arial, sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+nav {
+  background: #243b55;
   color: white;
+  padding: 20px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+nav h1 {
+  margin: 0 0 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: #ffcb05;
+  transform: translateY(-2px);
+}
+
+.pokeball-logo {
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(
+    to bottom,
+    #e53935 0 48%,
+    #111 48% 54%,
+    white 54% 100%
+  );
+  border: 3px solid #111;
+  border-radius: 50%;
+  position: absolute;
+  top: 18px;
+  left: 30px;
+}
+
+.pokeball-logo::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: white;
+  border: 4px solid #111;
+  border-radius: 50%;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.page-card {
+  background: white;
+  width: 80%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background: #4056d6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #ffcb05;
+  color: black;
+}
+
+.explore-page {
+  max-width: 1400px;
+}
+
+.explore-page form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.explore-page input {
+  max-width: 500px;
+}
+
+.pokemon-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1.3fr 1.4fr;
+  gap: 20px;
+  margin-top: 30px;
+  align-items: start;
+}
+
+.details-panel,
+.stats-panel,
+.moves-panel,
+.dex-panel {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 420px;
+  height: 520px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.details-panel:hover,
+.stats-panel:hover,
+.moves-panel:hover,
+.dex-panel:hover,
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.details-panel img {
+  width: 150px;
+  image-rendering: pixelated;
+  transition: transform 0.2s ease;
+}
+
+.details-panel img:hover {
+  transform: scale(1.15);
+}
+
+.details-panel h3 {
+  text-transform: capitalize;
+}
+
+.type-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.type-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.normal { background: #A8A878; }
+.fire { background: #F08030; }
+.water { background: #6890F0; }
+.electric { background: #F8D030; color: black; }
+.grass { background: #78C850; }
+.ice { background: #98D8D8; color: black; }
+.fighting { background: #C03028; }
+.poison { background: #A040A0; }
+.ground { background: #E0C068; color: black; }
+.flying { background: #A890F0; }
+.psychic { background: #F85888; }
+.bug { background: #A8B820; }
+.rock { background: #B8A038; }
+.ghost { background: #705898; }
+.dragon { background: #7038F8; }
+.dark { background: #705848; }
+.steel { background: #B8B8D0; color: black; }
+.fairy { background: #EE99AC; }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 85px 1fr 45px;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0;
+  text-align: left;
+}
+
+.stat-row span {
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.stat-bar {
+  background: #e5e7eb;
+  height: 14px;
+  border-radius: 999px;
+  overflow: hidden;
+  min-width: 100px;
+}
+
+.stat-fill {
+  background: #3b4cca;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.stat-total {
+  margin-top: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.moves-panel {
+  max-height: none;
+  overflow-y: hidden;
+}
+
+.moves-panel h3 {
+  border-bottom: 2px solid #eee;
+  padding: 10px 0;
+  margin-top: 0;
+}
+
+.moves-panel p {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.move-scroll {
+  max-height: 190px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.dex-panel {
+  overflow-y: auto;
+  overflow-wrap: break-word;
+}
+
+.dex-panel p {
+  margin: 10px auto;
+  max-width: 320px;
+}
+
+.evolution-line {
+  display: block;
+  text-align: center;
+  margin: 25px 0;
+  font-weight: bold;
+}
+
+.evolution-line p {
+  margin: 8px 0;
+  text-transform: capitalize;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.team-card {
+  background: white;
+  width: 300px;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card img {
+  width: 120px;
+  image-rendering: pixelated;
+  margin-bottom: 15px;
+}
+
+.team-card p {
+  margin: 10px 0;
+}
+
+.random-card {
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.random-card img {
+  width: 130px;
+  image-rendering: pixelated;
+  transition: transform 0.2s ease;
+}
+
+.random-card img:hover {
+  transform: scale(1.15);
+}
+
+.random-card h2 {
+  text-transform: capitalize;
+}
+
+.details-panel h3,
+.team-card h3,
+.random-card h2,
+.evolution-line p,
+.type-badge {
+  text-transform: capitalize;
+}
+
+.details-panel img:hover,
+.team-card img:hover,
+.random-card img:hover {
+  filter: drop-shadow(0 0 10px rgba(255, 203, 5, 0.6));
 }

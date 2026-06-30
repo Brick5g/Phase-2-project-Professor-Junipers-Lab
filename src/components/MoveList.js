@@ -26,6 +26,7 @@ function MoveList({ moves }) {
   return (
     <div>
       <h3>Level-Up Moves</h3>
+      <div className="move-scroll">
       {sortedLevelUpMoves.map((moveObj) => {
         const levelInfo = moveObj.version_group_details.find((detail) => {
           return detail.move_learn_method.name === "level-up";
@@ -37,8 +38,10 @@ function MoveList({ moves }) {
           </p>
         );
       })}
+      </div>
 
       <h3>TM/HM Moves</h3>
+      <div className="move-scroll">
       {machineMoves.map((moveObj) => {
         return (
           <p key={moveObj.move.name}>
@@ -46,6 +49,7 @@ function MoveList({ moves }) {
           </p>
         );
       })}
+      </div>
     </div>
   );
 }
