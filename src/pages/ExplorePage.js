@@ -59,7 +59,7 @@ function ExplorePage() {
   }
 
   return (
-    <div>
+    <div className="page-card">
       <h2>Explore Pokémon</h2>
       <SearchBar onSearch={searchPokemon} />
       {error ? <p>{error}</p> : null}
