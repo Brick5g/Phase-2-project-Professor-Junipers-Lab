@@ -15,16 +15,25 @@ function SavePokemonForm({ pokemon }) {
       reason: reason
     };
 
-  fetch("http://localhost:3001/team", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(savedPokemon)
-})
+  fetch("http://localhost:3001/team")
   .then((response) => response.json())
-  .then((newSavedPokemon) => {
-    console.log(newSavedPokemon);
+  .then((teamData) => {
+    if (teamData.length >= 6) {
+      alert("Your team is full! Remove a Pokémon before adding another.");
+      return;
+    }
+
+    fetch("http://localhost:3001/team", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(savedPokemon)
+    })
+      .then((response) => response.json())
+      .then((newSavedPokemon) => {
+        console.log(newSavedPokemon);
+      });
   });
 
     setNickname("");
