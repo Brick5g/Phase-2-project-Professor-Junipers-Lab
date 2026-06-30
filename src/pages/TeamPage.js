@@ -11,6 +11,15 @@ function TeamPage() {
       });
   }, []);
 
+  function handleDelete(id) {
+  fetch(`http://localhost:3001/team/${id}`, {
+    method: "DELETE",
+  }).then(() => {
+    const updatedTeam = team.filter((pokemon) => pokemon.id !== id);
+    setTeam(updatedTeam);
+  });
+}  
+
   return (
     <div>
       <h2>My Team</h2>
@@ -25,6 +34,9 @@ function TeamPage() {
             <p>Species: {pokemon.pokemonName}</p>
             <p>Pokédex #: {pokemon.pokemonId}</p>
             <p>Reason: {pokemon.reason}</p>
+            <button onClick={() => handleDelete(pokemon.id)}>
+              Remove from Team
+            </button>
           </div>
         );
       })}
