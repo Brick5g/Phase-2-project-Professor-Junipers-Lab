@@ -1,4 +1,53 @@
 {
-  "team": [],
+  "team": [
+    {
+      "pokemonName": "walking-wake",
+      "pokemonId": 1009,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1009.png",
+      "nickname": "",
+      "reason": "Random Team Generator",
+      "id": "t0LKcm6XKtY"
+    },
+    {
+      "pokemonName": "goomy",
+      "pokemonId": 704,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/704.png",
+      "nickname": "",
+      "reason": "Random Team Generator",
+      "id": "iINsuqqZ2P8"
+    },
+    {
+      "pokemonName": "vespiquen",
+      "pokemonId": 416,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/416.png",
+      "nickname": "",
+      "reason": "Random Team Generator",
+      "id": "XIeRycSPV-s"
+    },
+    {
+      "pokemonName": "seaking",
+      "pokemonId": 119,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/119.png",
+      "nickname": "",
+      "reason": "Random Team Generator",
+      "id": "4hxxT98wcIA"
+    },
+    {
+      "pokemonName": "pelipper",
+      "pokemonId": 279,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/279.png",
+      "nickname": "",
+      "reason": "Random Team Generator",
+      "id": "YzCa2Sh26i8"
+    },
+    {
+      "pokemonName": "cutiefly",
+      "pokemonId": 742,
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/742.png",
+      "nickname": "",
+      "reason": "Random Team Generator",
+      "id": "aMRqZdC7mzs"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

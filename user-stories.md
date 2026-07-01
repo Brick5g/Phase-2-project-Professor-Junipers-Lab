@@ -67,3 +67,9 @@
 ### User story: As a user, I want to delete a saved Pokémon from My Team so that I can remove Pokémon I no longer want in my collection.
 
 ### Each saved Pokémon card should have a delete button. When clicked, the app should send a DELETE request to json-server and remove that Pokémon from state so the page updates immediately.
+
+## Feature 10 - Random Team Generator
+
+### User story: As a user, if I'm in a rush and want to fill out my team. On the My Team Page the user can either generate a whole team from nothing or fill the remaining slots out
+
+### On button press the team will either fill out the remaining slots that are empty or generate a brand new team. The reason will be set to: Random Team Generator
