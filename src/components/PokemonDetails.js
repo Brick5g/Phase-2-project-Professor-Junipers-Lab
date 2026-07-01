@@ -1,17 +1,11 @@
 import MoveList from "./MoveList";
 import EvolutionLine from "./EvolutionLine";
 import SavePokemonForm from "./SavePokemonForm";
+import { capitalize } from "../helpers";
 
-function capitalize(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
 
 function PokemonDetails({ pokemon, pokedexEntry, evolutionLine }) {
   if (!pokemon) return null;
-
-  const types = pokemon.types
-    .map((typeObj) => typeObj.type.name)
-    .join(", ");
 
   const heightInFeet = (pokemon.height * 0.328084).toFixed(1);
   const weightInPounds = (pokemon.weight * 0.220462).toFixed(1);
@@ -59,7 +53,7 @@ function PokemonDetails({ pokemon, pokedexEntry, evolutionLine }) {
   })}
 
   <p className="stat-total">Total: {bst}</p>
-</div>
+  </div>
 
     <div className="moves-panel">
       <MoveList moves={pokemon.moves} />

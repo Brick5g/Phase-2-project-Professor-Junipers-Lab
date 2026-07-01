@@ -1,6 +1,4 @@
-function capitalize(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
+import { capitalize } from "../helpers";
 
 function EvolutionLine({ evolutionLine }) {
   if (evolutionLine.length === 0) {
