@@ -25,18 +25,14 @@ function HomePage() {
 
   return (
     <div className="page-card">
-      <h2>
-        Welcome to Professor Juniper's Lab
-      </h2>
+      <h2>Welcome to Professor Juniper's Lab</h2>
 
       <RandomPokemonCard
         pokemon={pokemon}
       />
 
       <RandomPokemonButton
-        onRandomPokemon={
-          fetchRandomPokemon
-        }
+        onRandomPokemon={fetchRandomPokemon}
       />
 
       <div className="home-info-section">
