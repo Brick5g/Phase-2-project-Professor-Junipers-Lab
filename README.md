@@ -31,6 +31,7 @@ A React single-page application inspired by the Pokémon games that allows train
 - Include a reason for adding them to your team
 - Remove Pokémon from your team
 - Team counter displays current team size
+- Can generate a whole team upon the press of a button
 
 ---
 

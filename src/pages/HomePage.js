@@ -65,6 +65,8 @@ function HomePage() {
         <p> • Save your favorite Pokémon to My Team.</p>
 
         <p> • Build your ultimate team of six Pokémon.</p>
+
+        <p> • Use the Random Team Generator to fill your team with random Pokémon if you're feeling lucky!</p>
       </div>
 
       </div>
